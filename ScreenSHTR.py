@@ -7,13 +7,6 @@ import ftplib
 import configparser
 import uuid
 
-# STEPS
-# 1 - read values from config file
-# 2 - check and create folder if not exist
-# 3 - start capturing screenshots and save them
-# 4 - create zip with all the screens
-# 5 - send zip to a FTP server
-
 config = configparser.ConfigParser()
 config.read('ScreenSHTR.ini')
 
@@ -77,7 +70,7 @@ def startScreenSHTR():
 
     # call doScreen function to take a screenshot
     doScreen(index)
-    print("DEBUG ONLY - Screenshot {} saved\n".format(index))
+    print("Screenshot {} saved\n".format(index))
     time.sleep(int(deltaScreenshot))
 
     # if system time is the same in config file, take all the screenshots, zip them and send to FTP
